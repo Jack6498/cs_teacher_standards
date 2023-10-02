@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='flex w-1/3 h-fit rounded-3xl border justify-center flex-col'>
-        <p className='text-center m-7'>Login</p>
+        <p className='text-center m-5 text-3xl font-semibold text-white'>Login</p>
         <form className=''>
           <label className="block p-5">
             <span className="block text-sm font-medium text-slate-700">Username</span>
@@ -24,7 +24,7 @@ export default function Home() {
           </label>
         </form>
        
-          <Link href={"/PlanView"} className="font-semibold text-lg border w-24 rounded-2xl m-4 text-center hover:bg-slate-300 hover:text-slate-950 ">Submit</Link>
+          <Link href={"/PlanView"} className="text-white text-lg border w-24 rounded-2xl m-4 text-center hover:bg-slate-300 hover:text-slate-950 hover:scale-125 ">Submit</Link>
         
 
       </div>
