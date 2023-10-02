@@ -1,18 +1,25 @@
-'use client'
+"use client"
 //page handels user login 
 import Link from "next/link"
 import DatePicker from 'react-datepicker';
 import React, {useState} from "react";
-import ReactQuill, {Quill} from "react-quill";
+import dynamic from "next/dynamic";
 import 'react-quill/dist/quill.snow.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
 
 export default function PlanView() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  var pdfValue;
-  var container = document.getElementById('pdf')!;
-  var editor = new Quill(container);
+  const [pdfValue, setPdfValue] = useState("");
+  const ReactQuill = dynamic(
+    ()=> {
+      return import('react-quill');
+    },
+    {ssr:false}
+  );
+  
+
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <div className="flex flex-row w-3/4 justify-between">
@@ -35,8 +42,8 @@ export default function PlanView() {
             <label htmlFor="nameInput">Teacher Name:</label>
             <input name="nameInput"></input>
             <label htmlFor="">Lesson Plan:</label>
-            <ReactQuill theme="snow" id = "pdf" onChange={() => pdfValue = editor.root.innerHTML.split('  ').join(' &nbsp;')}/>
-          </form>
+            <ReactQuill theme="snow" id = "pdf" onChange={(e)=> setPdfValue(e)}/>
+            </form>
       </div>
     </main>
   )
