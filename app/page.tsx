@@ -23,10 +23,7 @@ export default function Home() {
               "/>
           </label>
         </form>
-       
-          <Link href={"/PlanView"} className="text-white text-lg border w-24 rounded-2xl m-4 text-center hover:bg-slate-300 hover:text-slate-950 hover:scale-125 ">Submit</Link>
-        
-
+          <Link href={"/PlanView"} className="text-white text-lg border w-24 rounded-2xl m-4 text-center hover:bg-slate-300 hover:text-slate-950">Submit</Link>
       </div>
     </main>
   )
